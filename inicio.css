@@ -22,9 +22,15 @@ nav ul {
     display: flex;
     justify-content: left;
 }
-nav .perfil{
+nav div{
   display: flex;
   justify-content: right;
+}
+nav div .logo{
+  
+}
+nav div .perfil{
+
 }
 nav ul li {
   display: inline;
