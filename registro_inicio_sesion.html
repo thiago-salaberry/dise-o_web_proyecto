@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro e Inicio de Sesión</title>
+    <link rel="stylesheet" href="registro_inicio_sesion.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="form-container" id="registro">
+            <h2>Registro de Usuario</h2>
+            <form action="registro_datos.php" method="POST">
+                <div class="input-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="input-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+                <div class="input-group">
+                    <label for="email-reg">Email:</label>
+                    <input type="email" id="email-reg" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </div>
+                <div class="input-group">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion">
+                </div>
+                <div class="input-group">
+                    <label for="contraseña-reg">Contraseña:</label>
+                    <input type="password" id="contraseña-reg" name="contraseña" required>
+                </div>
+                <div class="input-group">
+                    <label for="pais">País:</label>
+                    <input type="text" id="pais" name="pais">
+                </div>
+                <button type="submit" class="btn">Registrarse</button>
+            </form>
+        </div>
+
+        <div class="form-container" id="inicio-sesion">
+            <h2>Inicio de Sesión</h2>
+            <form action="iniciar_sesion.php" method="POST">
+                <div class="input-group">
+                    <label for="email-login">Email:</label>
+                    <input type="email" id="email-login" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="contraseña-login">Contraseña:</label>
+                    <input type="password" id="contraseña-login" name="contraseña" required>
+                </div>
+                <button type="submit" class="btn">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
