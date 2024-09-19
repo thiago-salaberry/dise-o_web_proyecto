@@ -3,20 +3,20 @@ session_start();
 
 require 'sistema.php'; // Asegúrate de que aquí se establezca la conexión $conn con mysqli
 
-if (!empty($_POST['email']) && !empty($_POST['password'])) {
+if (!empty($_POST['email']) && !empty($_POST['contraseña'])) {
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $contraseña = $_POST['contraseña'];
 
     // Utiliza '?' como marcador de parámetro en mysqli
-    $query = $conn->prepare('SELECT id, email, password FROM usuarios WHERE email = ?');
+    $query = $conn->prepare('SELECT email, contraseña FROM clientes WHERE email = ?');
     $query->bind_param('s', $email); // 's' indica que es un parámetro de tipo string
     $query->execute();
     $result = $query->get_result();
-    $user = $result->fetch_assoc();
+    $usuario = $result->fetch_assoc();
 
-    if ($user && $password == $user['password']) {
-        $_SESSION['user_id'] = $user['id'];
-        header("Location: ../../index.html");
+    if ($usuario && $contraseña == $usuario['contraseña']) {
+        $_SESSION['usuario_id'] = $usuario['id'];
+        header('Location: inico.html');
         exit();
     } else {
         $message = 'Usuario o contraseña incorrectos';
