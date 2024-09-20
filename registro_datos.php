@@ -19,6 +19,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
+    echo "<script>alert('El email ya está registrado.'); window.history.back();</script>";
     // Si el email ya existe
 } else {
     // Si el email no está registrado, insertar el nuevo usuario
@@ -28,7 +29,11 @@ if ($result->num_rows > 0) {
     $stmt_insert->bind_param("sssssss", $nombre, $apellido, $email, $telefono, $direccion, $contraseña, $pais);
 
     if ($stmt_insert->execute()) {
-        echo "Registro exitoso";
+        // Obtener el ID del nuevo cliente
+        $nuevo_id = $conn->insert_id; // Obtener el ID del último registro insertado
+        $_SESSION['ID_cliente'] = $nuevo_id; // Guardar el ID en la sesión
+
+        echo "<script>alert('Bienvenido, $nombre.'); window.history.back();</script>"; // Mensaje de bienvenida con el nombre
         header("Location: inicio.html");
     } else {
         echo "Error: ". $stmt_insert->error;

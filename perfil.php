@@ -31,27 +31,32 @@ $conn->close();
 </head>
 <body>
     <header class="header">
-        <div class="logo">
-            <img src="">
-        </div>
         <nav class="navbar">
             <ul class="menu">
-                <li><a href="inicio.html">Inicio</a></li>
+                <a href="inicio.html"><li>Inicio</li></a>
             </ul>
         </nav>
     </header>
-    <section class="informacion">
-        <h2>Perfil de Usuario</h2>
-        <p><strong>Nombre:</strong> <?php echo htmlspecialchars($user['nombre']); ?></p>
-        <p><strong>Apellido:</strong> <?php echo htmlspecialchars($user['apellido']); ?></p>
-        <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
-        <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($user['telefono']); ?></p>
-        <p><strong>Dirección:</strong> <?php echo htmlspecialchars($user['direccion']); ?></p>
-        <p><strong>Pais:</strong> <?php echo htmlspecialchars($user['pais']); ?></p>
-
-    </section>
-    <section class="informacion">
-        <a href="registro_inicio_sesion.html"><h2>cerrar sesion</h2></a>
-    </section>
+    <main class="main">
+        <section class="informacion">
+            <div>
+                <h2>Perfil de Usuario</h2>
+                <p><strong>Nombre:</strong> <?php echo htmlspecialchars($user['nombre']); ?></p>
+                <p><strong>Apellido:</strong> <?php echo htmlspecialchars($user['apellido']); ?></p>
+                <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
+                <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($user['telefono']); ?></p>
+                <p><strong>Dirección:</strong> <?php echo htmlspecialchars($user['direccion']); ?></p>
+                <p><strong>Pais:</strong> <?php echo htmlspecialchars($user['pais']); ?></p>
+            </div>
+            <div>
+                <img src="imagenes/logo.png" alt="Logo" width="250" height="280">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="cerrar">
+            <a href="registro_inicio_sesion.html"><h2>cerrar sesion</h2></a>
+        </section>
+    </footer>
 </body>
 </html>
