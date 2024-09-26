@@ -4,7 +4,7 @@ require_once 'sistema.php';
 
 // Verificar si el usuario está logueado
 if (!isset($_SESSION['ID_cliente'])) {
-    header("Location: registro_inicio_sesion.html"); // Redirigir a la página de inicio de sesión y registro
+    header("Location: ../registro_inicio_sesion.html"); // Redirigir a la página de inicio de sesión y registro
     exit();
 }
 
@@ -27,19 +27,19 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
-    <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" href="../css/perfil.css">
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
             <ul class="menu">
-                <a href="inicio.html"><li>Inicio</li></a>
+                <a href="../inicio.html"><li>Inicio</li></a>
             </ul>
         </nav>
     </header>
     <main class="main">
         <section class="informacion">
-            <div>
+            <div class="datos">
                 <h2>Perfil de Usuario</h2>
                 <p><strong>Nombre:</strong> <?php echo htmlspecialchars($user['nombre']); ?></p>
                 <p><strong>Apellido:</strong> <?php echo htmlspecialchars($user['apellido']); ?></p>
@@ -48,14 +48,14 @@ $conn->close();
                 <p><strong>Dirección:</strong> <?php echo htmlspecialchars($user['direccion']); ?></p>
                 <p><strong>Pais:</strong> <?php echo htmlspecialchars($user['pais']); ?></p>
             </div>
-            <div>
-                <img src="imagenes/logo.png" alt="Logo" width="250" height="280">
+            <div class="logo">
+                <img src="../imagenes/logo.png" alt="Logo">
             </div>
         </section>
     </main>
     <footer>
         <section class="cerrar">
-            <a href="registro_inicio_sesion.html"><h2>cerrar sesion</h2></a>
+            <a href="../registro_inicio_sesion.html"><h2>cerrar sesion</h2></a>
         </section>
     </footer>
 </body>

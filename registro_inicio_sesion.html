@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro e Inicio de Sesión</title>
-    <link rel="stylesheet" href="registro_inicio_sesion.css">
+    <link rel="stylesheet" href="css/registro_inicio_sesion.css">
 </head>
 <body>
-    
     <div class="container">
         <div class="form-container" id="registro">
-            <h2>Registro de pais</h2>
-            <form action="registro_datos.php" method="POST">
+            <h2>Registro de Sesión</h2>
+            <form action="php/registro_datos.php" method="POST">
                 <div class="input-group">
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" required>
@@ -40,13 +39,13 @@
                     <label for="contraseña-reg">Contraseña:</label>
                     <input type="password" id="contraseña-reg" name="contraseña" required>
                 </div>
-                <button type="submit" class="btn">Registrarse<script src="email_eror.js"></script></button>
+                <button type="submit" class="btn">Registrarse</button>
             </form>
         </div>
 
         <div class="form-container" id="inicio-sesion">
             <h2>Inicio de Sesión</h2>
-            <form action="./validar_datos.php" method="POST">
+            <form action="php/validar_datos.php" method="POST">
                 <div class="input-group">
                     <label for="email-login">Email:</label>
                     <input type="email" id="email-login" name="email" required>

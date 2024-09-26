@@ -34,7 +34,7 @@ if ($result->num_rows > 0) {
         $_SESSION['ID_cliente'] = $nuevo_id; // Guardar el ID en la sesión
 
         echo "<script>alert('Bienvenido, $nombre.'); window.history.back();</script>"; // Mensaje de bienvenida con el nombre
-        header("Location: inicio.html");
+        header("Location: ../inicio.html");
     } else {
         echo "Error: ". $stmt_insert->error;
     }

@@ -15,7 +15,7 @@ if (!empty($_POST['email']) && !empty($_POST['contraseña'])) {
     
     if ($usuario && $contraseña == $usuario['contraseña']) {
         $_SESSION['ID_cliente'] = $usuario['ID_cliente'];
-        header('Location: inicio.html');
+        header('Location: ../inicio.html');
         exit();
     } else {
         $message = 'Usuario o contraseña incorrectos';

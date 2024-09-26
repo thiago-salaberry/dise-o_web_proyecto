@@ -13,7 +13,6 @@ body {
     justify-content: center; /* Centra el contenido del header */
 }
 .main {
-    align-items: flex-start; /* Alinea verticalmente al inicio */
     justify-content: center; /* Centra horizontalmente */
     display: flex; /* Asegúrate de que sea un contenedor flex */
     align-items: center; /* Centra verticalmente */
@@ -75,4 +74,10 @@ nav ul a{
 }
 h2 {
     color: #333;
+}
+
+.logo img{
+    justify-content: right;
+    width: 100%;
+    height: auto;
 }
