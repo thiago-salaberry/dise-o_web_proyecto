@@ -23,7 +23,6 @@ if (!isset($_SESSION['ID_cliente'])) {
             <ul>
                 <li><a href="../inicio.html">Inicio</a></li>
                 <li><a href="../php/productos.php">Productos</a></li>
-                <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             <div>
@@ -35,10 +34,15 @@ if (!isset($_SESSION['ID_cliente'])) {
     <main>
         <section class="introduccion">
             <div class="titulo">
-                <h1>Productos</h1>
+                <h1>Diseños únicos, creados a partir de una base sólida</h1>
             </div>
             <div class="texto">
-                <p>Printcraft 3D es un emprendimiento que se especializa en la creación de productos utilizando la innovadora tecnología de impresión 3D. Nos dedicamos a realizar productos personalizados basados en los gustos y la creatividad de nuestros clientes.</p>
+                <p>
+                    ¿Buscas algo único y especial? En Printcraft3D te ofrecemos una amplia gama de diseños 
+                    predefinidos que podrás personalizar a tu gusto. Desde prótesis funcionales y estéticas 
+                    hasta decoraciones y figuras coleccionables, tenemos el modelo perfecto para ti. 
+                    ¡Explora nuestro catálogo y encuentra el producto que encaja contigo!
+                </p>
             </div>
             <div class="texto">
                 <p>En nuestra página encontrarás más información sobre:</p>
