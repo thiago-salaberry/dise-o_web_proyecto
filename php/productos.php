@@ -45,16 +45,94 @@ if (!isset($_SESSION['ID_cliente'])) {
                 </p>
             </div>
             <div class="texto">
-                <p>En nuestra página encontrarás más información sobre:</p>
+                <p>En este apartado encontrarás todo sobre nuestros productos de: <br> (haga click en cualquiera para verlos mas rapido)</p>
                 <ul>
-                    <li>Nuestros productos y sus características</li>
-                    <li>Precios competitivos</li>
-                    <li>Cómo puedes encargar pedidos a tu gusto</li>
+                    <li><a href="#figuras">Figuras coleccionables</a></li>
+                    <li><a href="#decoraciones">Decoraciones para el hogar</a></li>
+                    <li><a href="#protesis">Protesis determinadas</a></li>
                 </ul>
             </div>
-            <div class="texto">
-                <p>Para seguir explorando preciona el boton de perfil arriba a la derecha. En caso que no lo hagas se te reenviara directamente si sales de la pagina inicio</p>
+        </section>
+        <section id="#figuras">
+            <?php
+            $sql1 = "SELECT * FROM productos LIMIT 3";
+            $result = $conn->query($sql1);
+            $imagenes = [
+                1 => '../imagenes/breaking bad.PNG',
+                2 => '../imagenes/WALL-E.PNG',
+                3 => '../imagenes/HAN-SOLO.PNG',
+            ];
+            while ($row = $result->fetch_assoc()) {
+            $imagen = isset($imagenes[$row['ID_producto']]) ? $imagenes[$row['ID_producto']] : 'default.PNG'; // Imagen por defecto si no se encuentra
+
+            echo '
+            <div class="producto">
+                <div>
+                    <img src="' . $imagen . '" alt="' . $row["nombre_prod"] . '">
+                </div>
+                <div>
+                <h3>' . $row["nombre_prod"] . '</h3>
+                <p>' . $row["descripcion_prod"] . '</p>
+                <h4>Precio: $' . $row["precio_prod"] . '</h4>
+                </div>
             </div>
+            ';
+            }
+            ?>
+        </section>
+        <section id="decoraciones">
+            <?php
+            $sql2 = "SELECT * FROM productos WHERE ID_producto >= 4 LIMIT 3";
+            $result = $conn->query($sql2);            
+            $imagenes = [
+                4 => '../imagenes/RELOJ.PNG',
+                5 => '../imagenes/SOPORTE-CELULAR.PNG',
+                6 => '../imagenes/MASETA.PNG',
+            ];
+            while ($row = $result->fetch_assoc()) {
+            $imagen = isset($imagenes[$row['ID_producto']]) ? $imagenes[$row['ID_producto']] : 'default.PNG'; // Imagen por defecto si no se encuentra
+
+            echo '
+            <div class="producto">
+                <div>
+                    <img src="' . $imagen . '" alt="' . $row["nombre_prod"] . '">
+                </div>
+                <div>
+                    <h3>' . $row["nombre_prod"] . '</h3>
+                    <p>' . $row["descripcion_prod"] . '</p>
+                    <h4>Precio: $' . $row["precio_prod"] . '</h4>
+                </div>
+            </div>
+            ';
+            }
+            ?>
+        </section>
+        <section class="protesis">
+            <?php
+            $sql3 = "SELECT * FROM productos WHERE ID_producto >= 7 LIMIT 3";
+            $result = $conn->query($sql3);            
+            $imagenes = [
+                7 => '../imagenes/MANO.PNG',
+                8 => '../imagenes/BOTA-ORTOPEDICA.PNG',
+                9 => '../imagenes/PATA-PERRO.PNG',
+            ];
+            while ($row = $result->fetch_assoc()) {
+            $imagen = isset($imagenes[$row['ID_producto']]) ? $imagenes[$row['ID_producto']] : 'default.PNG'; // Imagen por defecto si no se encuentra
+
+            echo '
+            <div class="producto">
+                <div>
+                    <img src="' . $imagen . '" alt="' . $row["nombre_prod"] . '">
+                </div>
+                <div>
+                    <h3>' . $row["nombre_prod"] . '</h3>
+                    <p>' . $row["descripcion_prod"] . '</p>
+                    <h4>Precio: $' . $row["precio_prod"] . '</h4>
+                </div>
+            </div>
+            ';
+            }
+            ?>
         </section>
     </main>
 </body>
