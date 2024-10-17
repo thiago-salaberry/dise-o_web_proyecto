@@ -61,7 +61,6 @@ section{
   max-width: 800px;
 }
 .introduccion {
-  place-items: center;
   margin: 0 auto;
 }
 
@@ -76,10 +75,9 @@ section{
 .introduccion p {
   text-align: justify;
 }
-
-.introduccion ul {
+.introduccion ul li{
   list-style-type: disc;
-  padding-left: 10px;
+  margin-left: auto;
 }
 .introduccion .titulo {
   margin-left: auto;
@@ -98,6 +96,7 @@ section{
 }
 .texto ul li a{
   text-decoration: none;
+  color: #000;
 }
 .producto {
   display: grid;

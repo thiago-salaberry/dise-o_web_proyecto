@@ -45,7 +45,7 @@ if (!isset($_SESSION['ID_cliente'])) {
                 </p>
             </div>
             <div class="texto">
-                <p>En este apartado encontrarás todo sobre nuestros productos de: <br> (haga click en cualquiera para verlos mas rapido)</p>
+                <p>En este apartado encontrarás todo sobre nuestros productos de:(haga click en cualquiera para verlos mas rapido)</p>
                 <ul>
                     <li><a href="#figuras">Figuras coleccionables</a></li>
                     <li><a href="#decoraciones">Decoraciones para el hogar</a></li>
@@ -74,10 +74,15 @@ if (!isset($_SESSION['ID_cliente'])) {
                 <h3>' . $row["nombre_prod"] . '</h3>
                 <p>' . $row["descripcion_prod"] . '</p>
                 <h4>Precio: $' . $row["precio_prod"] . '</h4>
+                <form action="carrito.php" method="post">
+                    <input type="hidden" name="id_producto" value="' . $row['ID_producto'] . '">
+                    <input type="hidden" name="id_cliente" value="' . $_SESSION['ID_cliente'] . '">
+                <button type="submit">Agregar al carrito</button>
+                </form>
                 </div>
             </div>
             ';
-            }
+            } 
             ?>
         </section>
         <section id="decoraciones">
@@ -101,6 +106,11 @@ if (!isset($_SESSION['ID_cliente'])) {
                     <h3>' . $row["nombre_prod"] . '</h3>
                     <p>' . $row["descripcion_prod"] . '</p>
                     <h4>Precio: $' . $row["precio_prod"] . '</h4>
+                    <form action="carrito.php" method="post">
+                        <input type="hidden" name="id_producto" value="' . $row['ID_producto'] . '">
+                        <input type="hidden" name="id_cliente" value="' . $_SESSION['ID_cliente'] . '">
+                    <button type="submit">Agregar al carrito</button>
+                </form>
                 </div>
             </div>
             ';
@@ -128,6 +138,11 @@ if (!isset($_SESSION['ID_cliente'])) {
                     <h3>' . $row["nombre_prod"] . '</h3>
                     <p>' . $row["descripcion_prod"] . '</p>
                     <h4>Precio: $' . $row["precio_prod"] . '</h4>
+                    <form action="carrito.php" method="post">
+                        <input type="hidden" name="id_producto" value="' . $row['ID_producto'] . '">
+                        <input type="hidden" name="id_cliente" value="' . $_SESSION['ID_cliente'] . '">
+                    <button type="submit">Agregar al carrito</button>
+                </form>
                 </div>
             </div>
             ';

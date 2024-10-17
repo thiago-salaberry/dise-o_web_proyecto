@@ -16,7 +16,9 @@ $stmt->execute();
 $result = $stmt->get_result();
 $user = $result->fetch_assoc();
 
-// Cerrar la conexión
+#$sql_carrito = "SELECT productos.nombre_prod, productos.precio_prod, SUM(productos.precio_prod) AS total 
+#                FROM carrito INNER JOIN productos ON carrito.ID_producto = productos.ID_producto 
+#                WHERE carrito.ID_cliente = ?";
 $stmt->close();
 $conn->close();
 ?>
@@ -51,11 +53,14 @@ $conn->close();
             <div class="logo">
                 <img src="../imagenes/logo.png" alt="Logo">
             </div>
+            <div class="carrito">
+                <h2>Carrito:</h2>
+            </div>
         </section>
     </main>
     <footer>
         <section class="cerrar">
-            <a href="../registro_inicio_sesion.html"><h2>cerrar sesion</h2></a>
+            <a href="../registro_inicio_sesion.html"><h1>cerrar sesion</h1></a>
         </section>
     </footer>
 </body>

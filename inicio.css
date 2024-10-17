@@ -76,7 +76,7 @@ main {
 
 .introduccion ul {
   list-style-type: disc;
-  padding-left: 5px;
+  margin-left: auto;
 }
 .introduccion .titulo {
   background-color: #e1faff;
